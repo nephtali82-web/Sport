@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Neph Gymplan"
+version = "1.0.0"
+id = "artifacts/gymplan"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25910
+
+[services.development]
+run = "pnpm --filter @workspace/gymplan run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/gymplan", "run", "build" ]
+publicDir = "artifacts/gymplan/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25910"
+BASE_PATH = "/"
