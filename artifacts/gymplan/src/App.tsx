@@ -141,7 +141,7 @@ export default function App() {
       {/* Topbar */}
       <div id="topbar">
         <div className="topbar-left">
-          <div className="topbar-eyebrow">4-Day PPL · Double Progression</div>
+          <div className="topbar-eyebrow">Ober/Unterkörper · Double Progression</div>
           <div className="topbar-title">Neph Gymplan</div>
         </div>
         <div className="topbar-right">
