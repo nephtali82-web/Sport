@@ -67,7 +67,7 @@ export default function App() {
       {splash && (
         <div id="splash">
           <div className="splash-ring">
-            <div className="splash-cg">CG</div>
+            <div className="splash-cg" style={{ fontSize: '28px' }}>🦍💉</div>
           </div>
           <div className="splash-title">Neph Gymplan</div>
           <div className="splash-sub">🦍 Double Progression System 💪🏾</div>
