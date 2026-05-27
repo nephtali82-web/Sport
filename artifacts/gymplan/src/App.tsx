@@ -5,7 +5,7 @@ import StatsPanel from './components/StatsPanel';
 import { DAYS, DAY_LABELS, DAY_EX } from './data/gymData';
 import './app.css';
 
-const MAX_WEEKS = 12;
+const MAX_WEEKS = 50;
 
 export default function App() {
   const [splash, setSplash] = useState(true);
@@ -201,11 +201,16 @@ export default function App() {
             <DayPanel
               day={activeDay}
               week={week}
+              hidden={gym.state.hidden}
+              swaps={gym.state.swaps}
               getSets={(exId, setNum) => gym.getSetData(week, exId, setNum)}
               onUpdateSet={(exId, setNum, field, value) => gym.updateSetData(week, exId, setNum, field, value)}
               onClear={exId => gym.clearExercise(week, exId)}
               getGoal={gym.getGoal}
               setGoal={gym.setGoal}
+              onToggleHide={gym.toggleHidden}
+              onSwap={gym.swapExercise}
+              onResetSwap={gym.resetSwap}
             />
           </div>
         )}
